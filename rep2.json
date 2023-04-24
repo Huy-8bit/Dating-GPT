@@ -1,0 +1,56 @@
+{
+  "profile1": {
+    "Name": "123",
+    "About me": "123",
+    "Living in": "123",
+    "Job": "123",
+    "Favourite Song": "123",
+    "Favourite Artist": "123",
+    "Language": "Spanish",
+    "Zodiac sign": "Taurus",
+    "Gender": "male",
+    "Looking for": "relationship",
+    "Education": "High School",
+    "Favourite Pet": "Dogs",
+    "Children": "Yes, I want children",
+    "Smoking": "Non-smoker",
+    "Drinking": "No, I do not drink alcohol",
+    "interests": [
+      "art",
+      "go out with friends",
+      "videogames",
+      "theater",
+      "meditation"
+    ]
+  },
+  "profile2": {
+    "Name": "123",
+    "About me": "123",
+    "Living in": "123",
+    "Gender": "female",
+    "Looking for": "dating",
+    "Language": "English",
+    "Zodiac sign": "Taurus",
+    "Education": "Associate's Degree",
+    "Job": "123",
+    "Drinking": "Yes, I drink alcohol",
+    "Smoking": "Non-smoker",
+    "Children": "I have children",
+    "Favourite Pet": "Cats",
+    "Favourite Song": "123",
+    "Favourite Artist": "123",
+    "interests": ["videogames", "gardening", "photography", "art", "soccer"]
+  },
+  "sender": "P1",
+  "msg_attr": ["creative", "witty", "teasing", "funny"],
+  "history": [
+    {
+      "sender": "P1",
+      "msg": "Hey there, I heard you like playing video games, let's play together and find out if we have any chemistry!"
+    },
+    {
+      "sender": "P2",
+      "msg": "Well, video games are my jam, but I'm more of a fan of art - so let's see who can make the better masterpiece!"
+    }
+  ]
+}
