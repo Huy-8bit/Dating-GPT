@@ -29,20 +29,18 @@ response = openai.Completion.create(
     engine="text-davinci-002",
     prompt=prompt,
     max_tokens=100,
-    n=3,
+    n=5,  # Generate 5 responses
     stop=None,
-    temperature=0.1,
+    temperature=0.7,  # Increase temperature for more diverse responses
 )
 
-# Extract the generated sentence from the response
-statement = response.choices[0].text.strip()
-
-# Print all responses from the API
-
+# Extract the generated sentences from the response
 list_of_responses = response.choices
 
+# Print all responses from the API
 for response in list_of_responses:
-    print(response.text)
+    print(response.text.strip())
+
     # print(translate.translate(response.text, "en", "vi"))
 
 
