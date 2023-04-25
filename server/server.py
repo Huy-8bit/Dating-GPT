@@ -17,3 +17,6 @@ def process_json():
 
 if __name__ == "__main__":
     app.run()
+
+
+lable = ["name", "áđâsd"]
