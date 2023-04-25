@@ -1,7 +1,11 @@
+import translate
+
+
 import openai
 import os
 
-openai.api_key = "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"
+
+openai.api_key = "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"
 profile1 = {
     "Name": "123",
     # ...
@@ -39,5 +43,10 @@ list_of_responses = response.choices
 
 for response in list_of_responses:
     print(response.text)
+    # print(translate.translate(response.text, "en", "vi"))
+
 
 # print(statement)
+
+
+# Currently 3 results have 2 of the same. What should I do to make it different from all 3
