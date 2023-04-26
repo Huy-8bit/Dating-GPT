@@ -1,6 +1,13 @@
 from flask import Flask, jsonify, request
+import random
+import process_data
 
 app = Flask(__name__)
+
+def process_choice(profile1, profile2):
+    choices = process_data.get_choice(profile1, profile2)
+    return {"choices": choices}
+
 
 @app.route("/", methods=["POST"])
 def process_json():
@@ -12,14 +19,9 @@ def process_json():
         response["sender"] = "P2"
         response["msg_attr"] = ["creative", "witty", "teasing", "funny"]
         response["history"] = [{"sender": "P1", "msg": "Hey there, you must be Taurus because you’re the only 10 out of 10 I see!"}]
-        response["choices"] = [
-            "Thanks for noticing! I think you're a Gemini because you have quite the wit!",
-            "Ah, so you must be a Gemini because you can spot a Taurus from a mile away!",
-            "I'm flattered! You must be a Gemini, the sign of intelligence and charm!"
-        ]
+        response["choices"] = process_choice(content["profile1"],content["profile2"])["choices"]
     else:
         response = {"error": "invalid request"}
-    print(response)
     return jsonify(response)
 
 if __name__ == "__main__":

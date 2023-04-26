@@ -6,7 +6,7 @@
         "Job": "123",
         "Favourite Song": "123",
         "Favourite Artist": "123",
-        "Language": "Spanish",
+        "Language": "English",
         "Zodiac sign": "Taurus",
         "Gender": "male",
         "Looking for": "relationship",
@@ -36,7 +36,7 @@
         "Drinking": "Yes, I drink alcohol",
         "Smoking": "Non-smoker",
         "Children": "I have children",
-        "Favourite Pet": "Cats",
+        "Favourite Pet": "Dogs",
         "Favourite Song": "123",
         "Favourite Artist": "123",
         "interests": ["videogames", "gardening", "photography", "art", "soccer"]

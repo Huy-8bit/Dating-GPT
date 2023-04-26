@@ -1,50 +1,48 @@
 {
-  "profile1": {
-    "Name": "123",
-    "About me": "123",
-    "Living in": "123",
-    "Favourite Artist": "123",
-    "Favourite Song": "123",
-    "Job": "123",
-    "Language": "Mandarin",
-    "Zodiac sign": "Gemini",
-    "Gender": "diverse",
-    "Looking for": "dating",
-    "Children": "No, I don't want children",
-    "Smoking": "Occasional smoker",
-    "Drinking": "No, I do not drink alcohol",
-    "Favourite Pet": "Cats",
-    "interests": ["go out with friends", "videogames", "cooking"]
-  },
-  "profile2": {
-    "Name": "123",
-    "About me": "123",
-    "Gender": "female",
-    "Looking for": "dating",
-    "Language": "English",
-    "Zodiac sign": "Taurus",
-    "Education": "Bachelor's Degree",
-    "Living in": "123",
-    "Job": "123",
-    "Drinking": "Yes, I drink alcohol",
-    "Smoking": "Occasional smoker",
-    "Children": "No, I don't want children",
-    "Favourite Pet": "Cats",
-    "Favourite Song": "123",
-    "Favourite Artist": "123",
-    "interests": ["videogames", "watching movies", "gardening"]
-  },
-  "sender": "P2",
-  "msg_attr": ["creative", "witty", "teasing", "funny"],
-  "history": [
-    {
-      "sender": "P1",
-      "msg": "Hey there, you must be Taurus because you’re the only 10 out of 10 I see!"
-    }
-  ],
-  "choices": [
-    "Thanks for noticing! I think you're a Gemini because you have quite the wit!",
-    "Ah, so you must be a Gemini because you can spot a Taurus from a mile away!",
-    "I'm flattered! You must be a Gemini, the sign of intelligence and charm!"
-  ]
+    "profile1": {
+        "Name": "123",
+        "About me": "123",
+        "Living in": "123",
+        "Favourite Artist": "123",
+        "Favourite Song": "123",
+        "Job": "123",
+        "Language": "Mandarin",
+        "Zodiac sign": "Taurus",
+        "Gender": "diverse",
+        "Looking for": "dating",
+        "Children": "No, I don't want children",
+        "Smoking": "Occasional smoker",
+        "Drinking": "No, I do not drink alcohol",
+        "Favourite Pet": "Cats",
+        "interests": ["go out with friends", "videogames", "cooking"]
+    },
+    "profile2": {
+        "Name": "123",
+        "About me": "123",
+        "Gender": "female",
+        "Looking for": "dating",
+        "Language": "English",
+        "Zodiac sign": "Taurus",
+        "Education": "Bachelor's Degree",
+        "Living in": "123",
+        "Job": "123",
+        "Drinking": "Yes, I drink alcohol",
+        "Smoking": "Occasional smoker",
+        "Children": "No, I don't want children",
+        "Favourite Pet": "Cats",
+        "Favourite Song": "123",
+        "Favourite Artist": "123",
+        "interests": ["videogames", "watching movies", "gardening"]
+    },
+    "sender": "P2",
+    "msg_attr": ["creative", "witty", "teasing", "funny"],
+    "history": [{
+        "sender": "P1",
+        "msg": "Hey there, you must be Taurus because you’re the only 10 out of 10 I see!"
+    }],
+    "choices": [
+        "Thanks for noticing! I think you're a Gemini because you have quite the wit!",
+        "Ah, so you must be a Gemini because you can spot a Taurus from a mile away!",
+        "I'm flattered! You must be a Gemini, the sign of intelligence and charm!"
+    ]
 }
