@@ -13,12 +13,21 @@ def get_matching_labels(profile1, profile2):
                     matching_tags.append(tag1)
     return matching_tags
 
-
+def print_content_of_list_matching_labels(list_matching_labels, profile1, profile2):
+    for i in list_matching_labels:
+        if isinstance(i, dict):
+            for key, value in i.items():
+                print("common", key, ":", value)
+        else:
+            print("common", i, ":", profile1[i])
+        
+    
+            
 def get_choice(profile1, profile2):
     choices = ["123123", "huy2", "huy3"]
     common_interests = list(set(profile1["interests"]).intersection(profile2["interests"]))
-    print("common_interests: ",common_interests)
     print("------")
     list_matching_labels = get_matching_labels(profile1, profile2)
-    print(list_matching_labels)
+    # print all content of list_matching_labels
+    print_content_of_list_matching_labels(list_matching_labels, profile1, profile2)
     return choices
