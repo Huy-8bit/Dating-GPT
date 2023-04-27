@@ -1,66 +1,53 @@
 import translate
-
-
 import openai
 import os
 
+openai.api_key = "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"
 
-openai.api_key = "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"
-# profile1 = {
-#     "Name": "123",
-#     # ...
-#     "interests": ["art", "go out with friends", "videogames", "theater", "meditation"],
-# }
 
-# profile2 = {
-#     "Name": "123",
-#     # ...
-#     "interests": ["videogames", "gardening", "photography", "art", "soccer"],
-# }
+def create_message(profile1, profile2, list_matching_labels, sender, history):
+    formatted_labels = []
 
-def create_message(profile1, profile2):
-    # Find common interests
-    common_interests = list(set(profile1["interests"]).intersection(profile2["interests"]))
+    for label in list_matching_labels:
+        if isinstance(label, str) and label in profile1 and label in profile2:
+            formatted_labels.append(f"{label}-{profile1[label]}-{profile2[label]}")
 
-    # Create a specific prompt to highlight common interests
-    prompt = f"Write a statement from Profile 1 to Profile 2 based on their common interests: {common_interests}."
+    print("Formatted list_matching_labels:")
+    print(formatted_labels)
+    
+    prompt = f"Write a statement from Profile 1 to Profile 2 based on what they have in common: {formatted_labels}. Consider the following message history:\n\n"
 
+    print("check history")
+    print(history)
+    
+    
+    for message in history:
+        prompt += f"{message['sender']} said: {message['msg']}\n"
+
+    print("check prompt")
+    print(prompt)
+    # return ["1","2","3"]
+    
     # Call the OpenAI API to generate a response
     response = openai.Completion.create(
         engine="text-davinci-002",
         prompt=prompt,
         max_tokens=100,
-        n=3,  # Generate 5 responses
+        n=3,  # Generate 3 responses
         stop=None,
         temperature=0.7,  # Increase temperature for more diverse responses
     )
 
     # Extract the generated sentences from the response
-    list_of_responses = response.choices
-
+    list_of_responses = []
+    for choice in response.choices:
+        list_of_responses.append(choice.text.strip())
     # Print all responses from the API
-    for response in list_of_responses:
-        print(response.text.strip())
-        message_translate = translate.translate(response.text.strip(), "en", "vi")
-        print(message_translate)
-        print("------------------------")
+    # for response in list_of_responses:
+    #     print(response.text.strip())
+    #     message_translate = translate.translate(response.text.strip(), "en", "vi")
+    #     print(message_translate)
+    #     print("------------------------")
 
     # Return all responses from the API
-    
     return list_of_responses
-
-# print(statement)
-
-
-
-# Hey! I see that we have some common interests. Do you like to play any specific videogames? I'm really into art too. What kind of art do you like?
-# Chào!Tôi thấy rằng chúng tôi có một số lợi ích chung.Bạn có thích chơi bất kỳ trò chơi video cụ thể nào không?Tôi cũng thực sự thích nghệ thuật.Bạn thích loại nghệ thuật nào?
-# ------------------------
-# Hey, I saw that we have a couple of common interests. I'm really into videogames and art too. It would be awesome to talk about those things with you sometime.
-# Này, tôi thấy rằng chúng ta có một vài lợi ích chung.Tôi cũng thực sự thích trò chơi điện tử và nghệ thuật.Thật tuyệt vời khi nói về những điều đó với bạn.
-# ------------------------
-# Hey! I noticed that we have a lot of common interests, like videogames and art. That's really cool!
-# Chào!Tôi nhận thấy rằng chúng tôi có rất nhiều sở thích chung, như trò chơi điện tử và nghệ thuật.Thật là tuyệt!
-
-
-

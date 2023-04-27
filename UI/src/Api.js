@@ -1,7 +1,13 @@
+// app.js
 import axios from 'axios';
 
 export const getRoot = async () => {
-  await axios.get('https://dating-better.onrender.com/');
+  try {
+    const response = await axios.post('http://127.0.0.1:5000/getchoice');
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 export const getPickUpLine = async (profiles, sender, history) => {
@@ -11,20 +17,24 @@ export const getPickUpLine = async (profiles, sender, history) => {
     "sender": sender,
     "history": history
   });
-  
 
-  const {data} = await axios.post('https://dating-better.onrender.com/GetPickupLine', {
-    "profile1": profiles.profile1,
-    "profile2": profiles.profile2,
-    "sender": sender,
-    "msg_attr": [
-        "creative",
-        "witty",
-        "teasing",
-        "funny",
-    ],
-    "history": history
-  });
+  try {
+    const { data } = await axios.post('http://127.0.0.1:5000/getchoice', {
+      "profile1": profiles.profile1,
+      "profile2": profiles.profile2,
+      "sender": sender,
+      "msg_attr": [
+          "creative",
+          "witty",
+          "teasing",
+          "funny",
+      ],
+      "history": history
+    });
 
-  return data;
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
 };
