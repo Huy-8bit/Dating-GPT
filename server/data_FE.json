@@ -6,7 +6,7 @@
         "Job": "123",
         "Favourite Song": "123",
         "Favourite Artist": "123",
-        "Language": "English",
+        "Language": "Spanish",
         "Zodiac sign": "Taurus",
         "Gender": "male",
         "Looking for": "relationship",
@@ -36,9 +36,12 @@
         "Drinking": "Yes, I drink alcohol",
         "Smoking": "Non-smoker",
         "Children": "I have children",
-        "Favourite Pet": "Dogs",
+        "Favourite Pet": "Cats",
         "Favourite Song": "123",
         "Favourite Artist": "123",
         "interests": ["videogames", "gardening", "photography", "art", "soccer"]
-    }
+    },
+    "sender": "P1",
+    "msg_attr": ["creative", "witty", "teasing", "funny"],
+    "history": []
 }

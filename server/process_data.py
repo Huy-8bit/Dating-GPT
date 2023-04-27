@@ -1,4 +1,5 @@
 import json
+import create_message
 
 def get_matching_labels(profile1, profile2):
     matching_tags = []
@@ -23,11 +24,15 @@ def print_content_of_list_matching_labels(list_matching_labels, profile1, profil
         
     
             
-def get_choice(profile1, profile2):
-    choices = ["123123", "huy2", "huy3"]
+def get_choice(profile1, profile2, sender, history):
+
     common_interests = list(set(profile1["interests"]).intersection(profile2["interests"]))
     print("------")
     list_matching_labels = get_matching_labels(profile1, profile2)
     # print all content of list_matching_labels
     print_content_of_list_matching_labels(list_matching_labels, profile1, profile2)
+    choices = create_message.create_message(profile1, profile2, list_matching_labels, sender, history)
     return choices
+
+
+
