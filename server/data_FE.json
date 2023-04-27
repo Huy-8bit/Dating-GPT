@@ -41,7 +41,10 @@
         "Favourite Artist": "123",
         "interests": ["videogames", "gardening", "photography", "art", "soccer"]
     },
-    "sender": "P1",
+    "sender": "P2",
     "msg_attr": ["creative", "witty", "teasing", "funny"],
-    "history": []
+    "history": [{
+        "sender": "P1",
+        "msg": "Hey there, I heard you like playing video games, let's play together and find out if we have any chemistry!"
+    }]
 }
