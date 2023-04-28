@@ -2,7 +2,7 @@ import translate
 import openai
 import os
 
-openai.api_key = "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"
+# openai.api_key = "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"
 
 
 def create_message(profile1, profile2, list_matching_labels, sender, history):
@@ -14,20 +14,21 @@ def create_message(profile1, profile2, list_matching_labels, sender, history):
 
     print("Formatted list_matching_labels:")
     print(formatted_labels)
-    
-    prompt = f"Write a statement from Profile 1 to Profile 2 based on what they have in common: {formatted_labels}. Consider the following message history:\n\n"
+    sender_receive = ''
+    if sender == 'P2':
+        sender_receive = 'P1'
+    else:
+        sender_receive = 'P2'
+         
+    prompt = f"Write a statement from {sender} to {sender_receive} based on what they have in common: {formatted_labels}. Consider the following message history:\n\n"
 
-    print("check history")
-    print(history)
     
     
     for message in history:
         prompt += f"{message['sender']} said: {message['msg']}\n"
 
-    print("check prompt")
-    print(prompt)
-    # return ["1","2","3"]
-    
+
+    # 'name-huy-huy','job-dev-dev',......
     # Call the OpenAI API to generate a response
     response = openai.Completion.create(
         engine="text-davinci-002",
@@ -42,12 +43,7 @@ def create_message(profile1, profile2, list_matching_labels, sender, history):
     list_of_responses = []
     for choice in response.choices:
         list_of_responses.append(choice.text.strip())
-    # Print all responses from the API
-    # for response in list_of_responses:
-    #     print(response.text.strip())
-    #     message_translate = translate.translate(response.text.strip(), "en", "vi")
-    #     print(message_translate)
-    #     print("------------------------")
+    
 
     # Return all responses from the API
     return list_of_responses

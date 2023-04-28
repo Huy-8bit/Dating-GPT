@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Heading, Highlight, chakra, shouldForwardProp } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Conversation from "../components/Conversation";
-import { getPickUpLine, getRoot } from '../Api.js';
+import { getchoice, getRoot } from '../Api.js';
 import ProfileHelper from "../helper/ProfileHelper";
 import { motion, isValidMotionProp } from "framer-motion"
 
@@ -71,7 +71,7 @@ const Chat = () => {
   async function fetchChoices() {
     const profileId = ProfileHelper.getNextProfileIdByHistory(history);
     try {
-      const {choices} = await getPickUpLine(profiles, profileId, history);
+      const {choices} = await getchoice(profiles, profileId, history);
       setFetchError(null);
       return choices ?? []
     } catch (error) {
