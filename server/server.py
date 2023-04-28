@@ -44,7 +44,6 @@
 # if __name__ == "__main__":
 #     app.run()
 
-
 from flask import Flask, jsonify, request
 import random
 import process_data
@@ -55,12 +54,16 @@ app = Flask(__name__)
 
 def process_choice(profile1, profile2, sender, history):
     choices = process_data.get_choice(profile1, profile2, sender, history)
+
     return {"choices": choices}
 
 
-@app.route("/getchoice", methods=["POST"])
+@app.route("/getchoice", methods=["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"])
 def process_json():
+    print("check")
     if not request.is_json:
+        print(request)
+        print("response ERROR Missing JSON data in request ")
         return jsonify({"error": "Missing JSON data in request"}), 400
 
     content = request.json
@@ -88,9 +91,12 @@ def process_json():
         )["choices"]
 
     else:
+        print("response ERROR")
         return jsonify({"error": "Invalid request: Missing required fields"}), 400
 
+    print("response SUCCESS")
     return jsonify(response)
+
 
 
 if __name__ == "__main__":
