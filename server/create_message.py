@@ -2,7 +2,7 @@ import translate
 import openai
 import os
 
-# openai.api_key = "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"
+# openai.api_key = "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"
 
 
 def create_message(profile1, profile2, list_matching_labels, sender, history):
@@ -12,17 +12,18 @@ def create_message(profile1, profile2, list_matching_labels, sender, history):
         if isinstance(label, str) and label in profile1 and label in profile2:
             formatted_labels.append(f"{label}-{profile1[label]}-{profile2[label]}")
 
-    print("Formatted list_matching_labels:")
-    print(formatted_labels)
+
     sender_receive = ''
     if sender == 'P2':
         sender_receive = 'P1'
     else:
         sender_receive = 'P2'
          
-    prompt = f"Write a statement from {sender} to {sender_receive} based on what they have in common: {formatted_labels}. Consider the following message history:\n\n"
-
+    # prompt = f"Write a statement from {sender} to {sender_receive} based on what they have in common: {formatted_labels}.Consider the following message history:\n\n"
     
+    prompt = f"Write a chat from {sender} to {sender_receive} based on what they have in common: {formatted_labels}. Consider the following message history:\n\n "
+    
+    print(sender + " to "+ sender_receive)
     
     for message in history:
         prompt += f"{message['sender']} said: {message['msg']}\n"
