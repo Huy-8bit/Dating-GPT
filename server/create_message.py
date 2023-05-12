@@ -2,7 +2,7 @@ import translate
 import openai
 import os
 
-# openai.api_key = "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"
+openai.api_key = "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"
 
 
 def create_message(profile1, profile2, list_matching_labels, sender, history):
